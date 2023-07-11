@@ -1,0 +1,17 @@
+.error-massege{
+    color: var(--error-color);
+    transform: translateY(-10px);
+    opacity: 0;
+    position: absolute;
+    top: -18px;
+    left: 0;
+    transition: transform ease-in-out 0.3s, opacity ease-in-out 0.5s;
+    font-size: 0.8rem;
+    font-weight: 600;
+
+}
+
+.error-massege-active{
+    transform: translateY(0);
+    opacity: 1;
+}

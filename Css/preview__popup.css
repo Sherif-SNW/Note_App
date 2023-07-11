@@ -1,0 +1,32 @@
+.preview__popup {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background-color: rgba(94, 94, 94, 0.522);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.preview__note {
+    height: 80%;
+    width: 80%;
+    border-radius: 25px;
+    padding: 20px;
+    line-height: 1.5;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.app:has(.notes-erea__note:active) .preview__popup {
+    display: flex;
+
+}

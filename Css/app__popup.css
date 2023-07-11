@@ -1,0 +1,248 @@
+.app__popup {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+.popup__add-note-modal {
+    width: 80%;
+    height: 80%;
+    background-color: var(--Color-white);
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    color: var(--Color-dark);
+
+    /* animation */
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity ease 0.3s, transform ease 0.2s;
+    
+}
+.popup__add-note-modal--show-animation{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.add-note-modal__modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-note-modal__modal-header h2 {
+    font-family: var(--ff-main);
+    font-size: 1.5rem;
+    margin-block-end: 10px;
+}
+
+.add-note-modal__new-date-checkbox{
+    display: flex;
+    gap: 10px;
+    border-bottom: 3px solid var(--Color-dark);
+    cursor: pointer;
+}
+.add-note-modal__new-date-checkbox > *{
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.add-note-modal__favorite-checkbox {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: var(--border-main-color);
+    padding: 7px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color ease 0.3s;
+}
+
+.add-note-modal__favorite-checkbox input {
+    display: none;
+}
+
+.add-note-modal__favorite-checkbox svg {
+    height: 25px;
+    width: 25px;
+    opacity: 0.5;
+    transition: opacity ease 0.1s;
+    
+}
+
+.add-note-modal__favorite-checkbox label {
+    display: flex;
+    pointer-events: none;
+}
+
+
+.add-note-modal__favorite-checkbox--checked{
+    background-color: #ffd500;
+}
+.add-note-modal__favorite-checkbox--checked svg{
+    opacity: 1;
+}
+
+
+.add-note-modal__favorite-checkbox rect {
+    fill: var(--Color-dark);
+}
+
+.add-note-modal__title,
+.add-note-modal__body {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--Color-dark);
+    font-family: var(--ff-main);
+    padding: 15px;
+    background-color: var(--Color-gray);
+    border-radius: 7px;
+
+    transition: box-shadow ease 0.4s;
+
+    /* test */
+    height: 100%;
+    width: 100%;
+}
+
+.add-note-modal__title:focus,
+.add-note-modal__body:focus {
+    box-shadow: 0 0 0 3px var(--Color-gray);
+}
+/* test */
+.add-note-modal__title-container,
+.add-note-modal__body-container{
+    position: relative;
+    width: 100%;
+}
+.add-note-modal__body-container{
+    flex-grow: 1;
+}
+/* test end */
+
+.add-note-modal__body {
+    resize: none;
+    flex-grow: 1;
+    margin-block-end: 10px;
+    line-height: 1.5;
+}
+
+.add-note-modal__modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    /* test */
+    position: relative;
+
+}
+
+.modal-footer__color-picker h3 {
+    font-size: 1.2rem;
+    margin-block-end: 5px;
+}
+
+.color-picker__list {
+    display: flex;
+    gap: 10px;
+    margin-block-end: 10px;
+}
+
+.color-picker__list label {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: box-shadow ease 0.2s;
+}
+
+.color-picker__color--selected{
+    box-shadow: 0 0 0 1.5px var(--Color-white), 0 0 0 5px var(--Color-dark);
+}
+
+.color-picker__list input {
+    display: none;
+}
+
+.modal-footer__btn {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-footer__btn button {
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color ease 0.2s,
+        color ease 0.2s,
+        border ease 0.2s,
+        box-shadow ease 0.2s;
+
+}
+
+.modal-footer__btn .cancel {
+    color: var(--error-color);
+    background-color: transparent;
+    outline: none;
+    border: 2px solid var(--error-color);
+
+
+}
+
+.modal-footer__btn .cancel:hover ,
+.modal-footer__btn .cancel:focus {
+    background-color: var(--error-color);
+    color: var(--Color-white);
+    box-shadow: 0 0 0 2px var(--Color-white), 0 0 0 4px var(--error-color);
+
+}
+
+.modal-footer__btn .create {
+    background-color: var(--Color-dark);
+    border: 2px solid var(--Color-dark);
+    color: var(--Color-white);
+
+}
+
+.modal-footer__btn .create:hover,
+.modal-footer__btn .create:focus {
+    box-shadow: 0 0 0 2px var(--Color-white), 0 0 0 4px var(--Color-dark);
+
+}
+
+/* mobile design */
+@media (max-width: 500px) {
+    .popup__add-note-modal {
+        width: 90%;
+        height: 70%;
+        padding: 20px 15px;
+        border-radius: 7px;
+    }
+    .add-note-modal__modal-footer {
+        flex-direction: column;
+        align-items: start;
+    }
+    .modal-footer__btn,.modal-footer__color-picker{
+        width: 100%;
+    }
+
+    .modal-footer__btn button {
+        flex-grow: 1;
+
+    }
+}

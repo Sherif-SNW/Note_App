@@ -1,0 +1,117 @@
+.app__wrapper-delete-dialog{
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+}
+
+.app__delete-dialog {
+    position: absolute;
+    top: 15%;
+    left: 55%;
+    transform: translate(-50%, -10%);
+    background-color: var(--Color-dark);
+    color: var(--Color-white);
+    border-radius: 10px;
+    box-shadow: 0 10px 15px -1px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+    /* box-shadow: 0 10px 10px -3px rgb(0 0 0 / 0.3); */
+    padding: 20px;
+    z-index: 2;
+
+    border-top: 5px solid var(--error-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 15px;
+
+    /* animation */
+    transition: opacity ease 0.3s, transform ease 0.3s;
+    opacity: 0;
+}
+.app__delete-dialog--show-animation{
+    opacity: 1;
+    transform: translate(-50%, -50%);
+
+}
+
+.delete-dialog__icon {
+    position: relative;
+}
+
+.delete-dialog__icon svg {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40px;
+    width: 40px;
+    background-color: var(--error-color);
+    border-radius: 50%;
+}
+
+.delete-dialog__icon path {
+    fill: var(--Color-white);
+}
+
+.delete-dialog__icon path:first-child {
+    stroke: var(--Color-white);
+}
+
+.delete-dialog__massege {
+    font-weight: 600;
+}
+
+.delete-dialog__btn {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-dialog__btn button {
+    flex-grow: 1;
+    padding: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+
+    transition:
+        color ease 0.2s,
+        border ease 0.2s,
+        box-shadow ease 0.2s;
+}
+
+.delete-dialog__btn .btn__delete {
+    color: var(--error-color);
+    background-color: transparent;
+    outline: none;
+    border: 2px solid var(--error-color);
+
+}
+
+.delete-dialog__btn .btn__delete:hover {
+    background-color: var(--error-color);
+    color: var(--Color-white);
+    box-shadow: 0 0 0 2px var(--Color-dark), 0 0 0 4px var(--error-color);
+
+}
+
+.delete-dialog__btn .btn__cancel {
+    background-color: var(--Color-dark);
+    border: 2px solid var(--Color-white);
+    color: var(--Color-white);
+
+}
+
+.delete-dialog__btn .btn__cancel:hover {
+    background-color: var(--Color-white);
+    color: var(--Color-dark);
+    box-shadow: 0 0 0 2px var(--Color-dark), 0 0 0 4px var(--Color-white);
+
+}
+
+@media (max-width: 500px) {
+    .app__delete-dialog{
+        top: 35%;
+        left: 50%;
+        width: 80%;
+    }
+}
